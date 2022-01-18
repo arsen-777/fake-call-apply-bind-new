@@ -13,7 +13,23 @@
 
 </details>
 <details>
-    <summary> 2.Fake New</summary>
+    <summary> 3.Fake Bind</summary>
+    <br>
+    Task: Write face Bind
+
+[Solution](./js/fakeBind.js)
+
+</details>
+<details>
+    <summary> 4.Fake Apply</summary>
+    <br>
+    Task: Write face Apply
+
+[Solution](./js/fakeApply.js)
+
+</details>
+<details>
+    <summary> 4.Fake New</summary>
     <br>
     Task: Write face New
 

@@ -1,11 +1,30 @@
 "use strict";
 
-function person(name, age) {
-  let obj = {};
-  obj.name = name;
-  obj.age = age;
-  return obj;
+function User(name) {
+  this.name = name;
+
+  return 12;
 }
 
-let a = person("Arsen", 29);
-console.log(a);
+function fakeNew(construct, ...rest) {
+  const _obj = {}; // 1
+  _obj.__proto__ = construct.prototype; // 2
+  const returndedValue = construct.apply(_obj, rest); // 3
+  if (typeof returndedValue === "object") {
+    return returndedValue;
+  } // 4
+  return _obj;
+}
+
+const user = new User("Vrezh");
+const user1 = fakeNew(User, "Vrezh");
+
+console.group("new");
+console.log(user);
+console.log(user.__proto__ === User.prototype);
+console.groupEnd();
+
+console.group("fake new");
+console.log(user1);
+console.log(user1.__proto__ === User.prototype);
+console.groupEnd();
